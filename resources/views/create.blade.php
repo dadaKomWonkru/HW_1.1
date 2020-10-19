@@ -1,30 +1,3 @@
-{{--@extends("layout")--}}
-
-{{--@section()--}}
-{{--    <div>--}}
-{{--        <form  method="post" enctype="multipart/form-data" action="{{route('posts.save')}}">--}}
-{{--            <div class="box-body">--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="exampleInputEmail1">Post Title</label>--}}
-{{--                    <input type="name" class="form-control"  placeholder="Name" name="title">--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="exampleInputEmail1">Post Text</label>--}}
-{{--                    <input type="name" class="form-control"  placeholder="Name" name="post_text">--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="exampleInputEmail1">Post Likes</label>--}}
-{{--                    <input type="name" class="form-control"  placeholder="Name" name="likes">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <input type="hidden" name="_token"  id='csrf_toKen' value="{{ csrf_toKen() }}">--}}
-{{--            <div class="box-footer">--}}
-{{--                <button type="submit" class="btn btn-primary">Save</button>--}}
-{{--            </div>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-
-{{--@endsection--}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -50,26 +23,26 @@
 <body class="antialiased">
 
     <div>
-        <form  method="book" enctype="multipart/form-data" action="{{route('book.save')}}">
+        <form  method="post" enctype="multipart/form-data" action="{{route('book.save')}}">
             <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">BOOK TITLE :</label>
-                    <input type="name" class="form-control"  placeholder="Name" name="title">
+                    <input type="name" class="form-control"  placeholder="Title" name="title">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">BOOK AUTHOR</label>
-                    <input type="name" class="form-control"  placeholder="Name" name="author">
+                    <input type="name" class="form-control"  placeholder="Author" name="author">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">PAGES</label>
-                    <input type="name" class="form-control"  placeholder="Name" name="pages">
+                    <input type="name" class="form-control"  placeholder="Pages" name="pages">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">LANGUAGE</label>
-                    <input type="name" class="form-control"  placeholder="Name" name="language">
+                    <input type="name" class="form-control"  placeholder="Language" name="language">
                 </div>
             </div>
-            @csrf
+            <input type="hidden" name="_token"  id='csrf_toKen' value="{{ csrf_toKen() }}">
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>

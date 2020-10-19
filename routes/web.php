@@ -22,9 +22,17 @@ Route::get('/', function () {
 
 Route::get('/books', [\App\Http\Controllers\PostsController::class,"index"]);
 
-Route::get('/books/create', [\App\Http\Controllers\PostsController::class,"create"])->name("book.crete");
+Route::get('/books/create', [\App\Http\Controllers\PostsController::class,"create"])->name("book.create");
 
-Route::get('/books/books_save', [\App\Http\Controllers\PostsController::class,"save"])->name("book.save");
+Route::post('/books/books_save', [\App\Http\Controllers\PostsController::class,"save"])->name("book.save");
+
+Route::get('/books/{book}', [\App\Http\Controllers\PostsController::class,"show"])->name("book.show");
+
+Route::get('/books/{book}/edit', [\App\Http\Controllers\PostsController::class,"edit"])->name("book.edit");
+
+Route::post('/books/{book}/update', [\App\Http\Controllers\PostsController::class,"update"])->name("book.update");
+
+Route::get('/books/{book}/delete', [\App\Http\Controllers\PostsController::class,"delete"])->name("book.delete");
 
 
 

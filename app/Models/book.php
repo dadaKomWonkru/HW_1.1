@@ -17,6 +17,6 @@ class book extends Model
 
         ];
 
-
+    public $timestamps = false;
 
 }

@@ -1,37 +1,57 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\book;
+use Illuminate\Http\Request;
+
+
 
 class PostsController extends Controller
 {
 
     public function index ()  {
 
-        $books = \Illuminate\Support\Facades\DB::table("books")->get();
 
+        $books = book::all();
 
-        return view('book')->with("books",$books);}
+        return view('books')->with("books",$books);}
 
+    public function show(book $book)  {
 
+        return view("book")->with("book",$book);
+
+    }
 
     public function save(Request $request){
         $book = new book($request->all());
-        return $book;
-//        $book->save();
-//        return redirect()->back();
-//       დასეივებისდროს შემექმნა პროლემა: SQLSTATE[42S22]: Column not found:
-// 1054 Unknown column 'updated_at' in 'field list'
-// (SQL: insert into `books` (`title`, `author`, `pages`, `language`, `updated_at`, `created_at`)
-// values (The 100, kass Morgan, 200, Eng, 2020-10-12 12:14:15, 2020-10-12 12:14:15))
-//        ამ ერორს მიჩვენედა დავსერჩე მაგრამ მაინც ვერ მოვუხერხე ვერაფერი. ამიტო ბაზაში დამტების ნაცვლად პირდაპირ
-//        გვერდზე დავაეჭდინე ლისთის სახით
+
+        $book->save();
+
+        return redirect()->back();
+
     }
 
     public function create() {
         return view("create");        }
 
+    public function edit(book $book){
+
+        return view("edit")->with("book",$book);
+
+    }
+    public function update(Request $request,book $book){
+
+        $book->update($request->all());
+
+        return redirect()->route("book.show",$book->id);
+
+
+
+    }
+    public function delete(book $book){
+        $book->delete();
+        return redirect()->back();
+
+    }
 
 }
