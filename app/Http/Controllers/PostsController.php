@@ -39,6 +39,7 @@ class PostsController extends Controller
         return view("edit")->with("book",$book);
 
     }
+
     public function update(Request $request,book $book){
 
         $book->update($request->all());

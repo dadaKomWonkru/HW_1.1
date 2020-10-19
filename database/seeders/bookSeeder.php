@@ -15,6 +15,7 @@ class bookSeeder extends Seeder
     public function run()
     {
         book::insert([
+
             "title" => "Harry Potter and goblet of the fire",
             "author" => "J.K. Rowling",
             "pages" =>453,

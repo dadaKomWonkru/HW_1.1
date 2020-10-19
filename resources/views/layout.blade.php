@@ -23,4 +23,6 @@
 <body class="antialiased">
     @yield("content")
 
+
+
 </body>

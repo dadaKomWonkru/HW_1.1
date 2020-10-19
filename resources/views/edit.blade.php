@@ -25,6 +25,8 @@
     Edit Post
 </h1>
 
+
+
 <div>
     <form  method="post" enctype="multipart/form-data" action="{{route('book.update',$book->id)}}">
         @csrf

@@ -28,11 +28,14 @@ Route::post('/books/books_save', [\App\Http\Controllers\PostsController::class,"
 
 Route::get('/books/{book}', [\App\Http\Controllers\PostsController::class,"show"])->name("book.show");
 
+Route::get('/books/{book}/delete', [\App\Http\Controllers\PostsController::class,"delete"])->name("book.delete");
+
 Route::get('/books/{book}/edit', [\App\Http\Controllers\PostsController::class,"edit"])->name("book.edit");
 
-Route::post('/books/{book}/update', [\App\Http\Controllers\PostsController::class,"update"])->name("book.update");
+Route::put('/books/{book}/update', [\App\Http\Controllers\PostsController::class,"update"])->name("book.update");
 
-Route::get('/books/{book}/delete', [\App\Http\Controllers\PostsController::class,"delete"])->name("book.delete");
+
+
 
 
 

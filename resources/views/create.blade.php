@@ -28,6 +28,7 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">BOOK TITLE :</label>
                     <input type="name" class="form-control"  placeholder="Title" name="title">
+
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">BOOK AUTHOR</label>

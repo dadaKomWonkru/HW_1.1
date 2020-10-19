@@ -14,7 +14,6 @@ class book extends Model
         "author",
         "pages",
         "language",
-
         ];
 
     public $timestamps = false;
